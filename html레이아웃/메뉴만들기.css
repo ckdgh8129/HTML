@@ -1,0 +1,18 @@
+
+*{
+    background: skyblue;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /*전체 사이즈가 다른 패깅과 마진에 변화하지않기위해*/
+}
+#wrap{
+    width: 1200px; /*최대 너비*/
+    position: relative;
+    margin: 20px auto;
+   
+}
+#header{
+    padding: 10px 20px;
+    
+}
