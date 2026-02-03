@@ -4,8 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./course.css">
 </head>
 <body>
-    
+    <div id="wrap">
+       <header>
+  <div class="nav-container">
+    <a href="#" class="logo-area">
+      <img src="img.jpg" alt="로고이미지"> 
+    </a>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">COURSE</a></li>
+        <li><a href="#">RESTAURANT</a></li>
+        <li><a href="#">TIP</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+    <main id="main">
+        <!--선택탭-->
+        <div class="tab-wrap">
+            <input type="radio" id="tab1" name="tab-group" checked>
+            <label for="tab1" class="tab-btn">1박2일</label>
+
+            <input type="radio" id="tab2" name="tab-group">
+            <label for="tab2" class="tab-btn">2박3일</label>
+
+            <input type="radio" id="tab3" name="tab-group">
+            <label for="tab3" class="tab-btn">4박5일</label>
+
+         <!--일정표 (회색박스로 대체)-->
+            <div class="tab-content-area">
+            
+                <div id="content1" class="tab-content">
+                    1박2일 일정표
+                </div>
+           
+                <div id="content2" class="tab-content">
+                   2박3일 일정표
+                </div>
+            
+                <div id="content3" class="tab-content">
+                    4박5일 일정표
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer">
+
+    </footer>
+    </div>
+
+
+
+
 </body>
 </html>
