@@ -1,0 +1,33 @@
+.imgwrap{
+    margin-top: 20px;
+    height: 300px;
+
+}
+.img1{
+    float: left;
+    height: 300px;
+    width: 150px;
+    margin: 0 10px;
+}
+.img1 img{
+    width: 100%;
+  
+}
+.imgcard2{
+    height: 300px;
+    width: 150px;
+    margin: 0 10px;
+    float: left;
+}
+.imgcard2.a{
+    background: url("./img4.gif") no-repeat center;
+    background-size: contain;
+}
+.imgcard2.b{
+     background: url("./img6.gif") no-repeat center;
+    background-size: contain;
+}
+.imgcard2.c{
+     background: url("./img5.gif") no-repeat center;
+    background-size: contain;
+}
