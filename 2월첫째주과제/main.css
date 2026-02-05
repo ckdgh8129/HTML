@@ -5,15 +5,18 @@
     box-sizing: border-box;
 }
 
+
+
 #wrap{
-    /* max-width: 1200px; */
     width: 100%;
     margin: 0 auto;
     position: relative;
 }
 
-
-
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
 /* ===================== 헤더 ===================== */
 /* 헤더 전체 배경 및 상단 고정 */
@@ -70,7 +73,7 @@ header {
 
 /* 마우스 올렸을 때 색상 변경 */
 .nav-menu a:hover {
-  color: #3498db;
+  color: #ffa53b;
 }
 
 
@@ -85,25 +88,70 @@ header {
 #hero_box{
     width: 100%;
     overflow: hidden;
+    margin-bottom: 50px;
 }
 
 #hero_box img{
     width: 100%;
-    height: 500px;
+    height: 700px;
     object-fit: cover;
     display: block;
 }
 
+/* 히어로: 글씨를 올리기 위한 기준점 */
+.heroMedia{
+  position: relative;
+}
+
+/* 히어로 텍스트(가운데 배치) */
+.heroText{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  text-align: center;
+  color: #fff;
+  padding: 16px 22px;
+
+}
+
+/* 글자가 배경에 묻힐 때 대비(가장 쉬운 해결) */
+.heroText h1,
+.heroText p{
+  text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.45);
+}
+
+.heroText h1{
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.heroText p{
+  font-size: 22px;
+  font-weight: 700;
+}
+
 /* 베스트 샷 */
+.sectionTitle{
+  margin: 0 0 12px 10px;
+  font-size: 22px;
+  font-weight: 800;
+  color: #111;
+}
+
 #bestshot_box{
     display: flex; /* 가로로 나열 */
+    flex-wrap: wrap;
     gap:20px; /* 사진 사이 간격 */
-    margin-top: 30px;
 
+    margin-bottom: 50px;
 }
 
 #bestshot_box .card {
     flex: 1;   /* 3개가 공평하게 1:1:1 비율을 가짐 */
+    min-width: 300px;
 }
 
 #bestshot_box img {
@@ -113,20 +161,71 @@ header {
     border-radius: 10px; /* 모서리 둥글게 (선택사항) */
 }
 
-/* 이미지 박수 */
-#imgs_box{
-  display: grid 3*3;
-  min-height: 500px;
-  background-color: lightgray;
-  padding: 20px;
-  border-radius: 10px;
+/* 처음에는 글자를 안 보이게 숨김 */
+.cardText {
+  opacity: 0;
+  transform: translateY(10px); /* 살짝 아래에 배치 */
+  transition: all 0.3s ease;   /* 부드러운 움직임 */
+  
+  margin-top: 10px;            /* 사진과 글자 사이 간격 */
   text-align: center;
 }
 
-.img_card img{
-  height: 100px;
-  background-color: gray;
+/* 카드의 사진에 마우스를 올리면 글자가 나타남 */
+.card:hover .cardText {
+  opacity: 1;
+  transform: translateY(0);    /* 제자리로 올라오며 등장 */
+}
 
+/* 글자 스타일 (선택사항) */
+.cardText h4 { font-size: 18px; margin-bottom: 4px; }
+.cardText p { font-size: 14px; color: #666; }
+
+
+
+
+/* 이미지 박스 */
+/* 이미지 박스(회색 영역) */
+#imgs_box{
+  min-height: 100px;
+  background-color: lightgray;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* 실제 3×3 배치가 일어나는 그리드 컨테이너 */
+/* 실제 배치가 일어나는 컨테이너 */
+.imgFlex {
+  display: flex;        /* Flexbox 레이아웃 적용 */
+  flex-wrap: wrap;      /* 핵심: 아이템이 넘치면 다음 줄로 넘어가게 설정 */
+  gap: 12px;            /* 아이템 사이 간격 */
+  justify-content: center; /* 가운데 정렬 */
+  margin-top: 12px;
+  /* 부모의 너비를 624px로 제한하여 4번째 아이템은 다음 줄로 강제 이동 */
+  max-width: 624px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 각 칸(아이템) */
+.imgItem {
+  /* 핵심: 아이템 너비를 200px로 고정 (늘어나거나 줄어들지 않음) */
+  flex: 0 0 200px;
+  
+  height: 200px;        
+  background: #bdbdbd;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 

@@ -5,9 +5,10 @@ padding: 0;
 }
 #wrap{
     width: 100%; 
+    max-width: 1200px;
     position: relative;
     margin: 0 auto;
-    /* max-width: 1200px; */
+    
 }
 header {
   position: fixed;
@@ -25,11 +26,11 @@ header {
 /* 실제 내용이 들어가는 박스 */
 .nav-container {
   width: 1200px;
-  height: 100%;
+  max-height: 100%;
   display: flex;
   justify-content: space-between;  
   align-items: center;
-  padding: 0 20px;
+  margin: 0 auto;
 }
 
 /* 로고 영역 스타일 */
@@ -62,44 +63,57 @@ header {
 
 /* 마우스 올렸을 때 색상 변경 */
 .nav-menu a:hover {
-  color: #3498db;
+  color: #ffa53b;
 }
 #main {
-    max-width: 1000px;
+  width: 100%;
+    max-width: 1200px;
     margin: 100px auto 20px auto;
-    padding: 20px;
+    padding: 0 20px;
     text-align: center;
 }
 /*일정 고르는 탭*/
 .tab-wrap {
     text-align: center;
+    transform: translateY(0);
 }
 input[type="radio"] {
     display: none;
 }
 .tab-btn {
     display: inline-block;
-    padding: 30px 129px;
-    margin: 0 5px;
-    background-color: #fca5a5;
+    width: 30%;
+    max-width: 380px;
+    padding: 20px;
+    margin: 10px 5px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     color: #333;
-    border-radius: 5px;
+    border-radius: 15px;
     cursor: pointer; 
     font-weight: bold;
-    transition: background-color 0.3s;
+    transition: transform 0.25s, background-color 0.3s, box-shadow 0.25s;
 }
+
+.tab-btn:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
 #tit{
     color: black;
     /* background: rgb(213, 244, 255); */
     margin: 10px auto;
     border-radius: 5px;
     width: fit-content;
-    margin-top: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
 
     
 }
 input[type="radio"]:checked + .tab-btn {
-    background-color: skyblue;
+    background-color: #ffa53b;
     color: black;
 }
 .tab-content-area {
@@ -107,22 +121,27 @@ input[type="radio"]:checked + .tab-btn {
     padding: 10px;
     border-radius: 8px;
     background-color: rgb(255, 255, 255);
-    min-height: 800px;
+    /* min-height: 800px; */
     margin-top: 10px;
 }
 /*박스로 대체한 부분*/
 .tab-content {
     display: none; 
     background-color: #5a5a5a; 
-    min-height: 800px; 
+    width: 100%;
+    /* min-height: 500px;  */
     justify-content: center; 
     align-items: center; 
     color: #666;
-    font-weight: bold;
+    overflow: hidden;
     border-radius: 5px;
 }
+
 .tab-content img {
-    display: none; 
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover; 
 }
 #tab1:checked ~ .tab-content-area #content1 {
     display: flex; 

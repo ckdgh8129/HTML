@@ -36,9 +36,9 @@
     CSS 포인트
 
     -->
-    <div id="wrap">
-      <header>
-        <!-- ===== header 시작 ===== -->
+    <div id="wrap"> <!-- 전체 레이아웃 -->
+
+      <header> <!-- ===== header 시작 ===== -->  
         <div class="nav-container">
           <a href="#" class="logo-area">
             <img src="team-logo.png" alt="로고이미지" />
@@ -52,62 +52,89 @@
             </ul>
           </nav>
         </div>
-      </header>
-      <!-- ===== header 끝 ===== -->
+      </header> <!-- ===== header 끝 ===== -->
+      
 
-      <main id="main">
-        <!-- ===== main 시작 ===== -->
+      <main id="main"> <!-- ===== main 시작 ===== -->
+        
         <!-- A(메인, 도헌) : Hero + 베스트 스팟 3 카드 + 사진 영역(회색 박스) -->
 
         <!-- 히어로 -->
         <div id="hero_box">
-          <div><img src="./가파도.jpg" /></div>
-        </div>
-
-        <!-- 베스트 샷 -->
-        <div id="bestshot_box">
-          <div class="card"><img src="./성산일출봉.jpg" /></div>
-          <div class="card"><img src="./1100고지.jpg" /></div>
-          <div class="card"><img src="./함덕서우봉해변 .jpg" /></div>
-        </div>
-
-        <!-- 이미지 박스 -->
-        <div id="imgs_box">
-          <p>이미지 박스</p>
-
-          <div class="imgGrid">
-            <div class="imgItem"><img src="" alt="" /></div>
-            <div class="imgItem"><img src="" alt="" /></div>
-            <div class="imgItem"><img src="" alt="" /></div>
-            <div class="imgItem"><img src="" alt="" /></div>
-            <div class="imgItem"><img src="" alt="" /></div>
-            <div class="imgItem"><img src="" alt="" /></div>
-            <div class="imgItem"><img src="" alt="" /></div>
-            <div class="imgItem"><img src="" alt="" /></div>
-            <div class="imgItem"><img src="" alt="" /></div>
+          <div class="heroMedia">
+            <div><img src="./가파도.jpg" alt="제주 풍경" /></div>
+            <!-- 이미지 위 중앙 문구 -->
+            <div class="heroText">
+              <h1>살기 좋은 제주</h1>
+              <p>제주도 좋다</p>
+            </div>
           </div>
         </div>
-      </main>
-      <!-- ===== main 끝 ===== -->
 
-      <footer id="footer">
-        <!-- ===== footer 시작 ===== -->
-        <!-- footer 안쪽의 "정보 블록(내용 덩어리)" -->
-        <div id="footerInfo">
-          <!-- 1) 주소 -->
-          <p class="footerLine">
+    
+        <div class="container"> <!-- 베스트샷 시작 -->
+          <h2 class="sectionTitle">베스트 샷</h2>     <!-- 베스트 샷 제목 -->
+          <div id="bestshot_box"> <!-- 베스트 샷 내용 -->
+            <div class="card">
+              <img src="./성산일출봉.jpg" />
+              <div class = cardText >
+                <h4>성산일출봉</h4>
+                <p>경관이 장관이야</p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="./1100고지.jpg" />
+              <div class = cardText>
+                <h4>1100고지</h4>
+                <p>은하수</p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="./함덕서우봉해변 .jpg" />
+              <div class = cardText>
+                <h4>함덕서우봉해변</h4>
+                <p>시원한 여름 바다</p>
+              </div>
+            </div>
+          </div>
+        </div> <!-- 베스트 샷 끝-->
+
+        <div class="container"> <!-- 갤러리 시작 -->
+          <h2 class="sectionTitle">갤러리</h2> <!-- 갤러리 제목 -->
+          <div id="imgs_box"> <!-- 이미지 박스 -->
+            <p>이미지 박스</p>
+            <div class="imgFlex">
+              <div class="imgItem"><img src="./photo/제주대학교 벚꽃길.jpg" alt="" /></div>
+              <div class="imgItem"><img src="./photo/한라산여명.jpg" alt="" /></div>
+              <div class="imgItem"><img src="./photo/오름군.jpg" alt="" /></div>
+              <div class="imgItem"><img src="./photo/도순녹차밭.jpg" alt="" /></div>
+              <div class="imgItem"><img src="./photo/물영아리습지.jpg" alt="" /></div>
+              <div class="imgItem"><img src="./photo/형제섬일출.jpg" alt="" /></div>
+              <div class="imgItem"><img src="./photo/제주올레코스.jpg" alt="" /></div>
+              <div class="imgItem"><img src="./photo/사려니숲길.jpg" alt="" /></div>
+              <div class="imgItem"><img src="./photo/추자도 추자일출 .jpg" alt="" /></div>
+            </div>
+          </div>
+        </div>
+      </main>  <!-- ===== main 끝 ===== -->
+
+
+      <footer id="footer">   <!-- ===== footer 시작 ===== -->
+        <div id="footerInfo">    <!-- footer 안쪽의 "정보 블록(내용 덩어리)" -->
+          
+          <p class="footerLine">  <!-- 1) 주소 -->
             <span class="label">주소</span>
             <span class="value">대전광역시 ○○구 ○○로 00</span>
           </p>
 
-          <!-- 2) 연락처 -->
-          <p class="footerLine">
+
+          <p class="footerLine">  <!-- 2) 연락처 -->
             <span class="label">연락처</span>
             <span class="value">010-0000-0000 · example@email.com</span>
           </p>
 
-          <!-- 3) 저작권 (텍스트가 본체 + 로고는 보조) -->
-          <p class="footerCopyright">
+          
+          <p class="footerCopyright">  <!-- 3) 저작권 (텍스트가 본체 + 로고는 보조) -->
             <span class="copyrightRow">
               <span class="copyrightText"
                 >© 2026 2팀 (bottomup). All rights reserved.</span
@@ -122,10 +149,8 @@
             </span>
           </p>
         </div>
-      </footer>
-      <!-- ===== footer 끝 ===== -->
-    </div>
-    <!-- ==== Wrap 끝 ==== -->
-  </body>
-  <!-- ===== body 끝 ===== -->
+
+      </footer> <!-- ===== footer 끝 ===== -->
+    </div> <!-- ==== Wrap 끝 ==== -->
+  </body> <!-- ===== body 끝 ===== -->
 </html>

@@ -1,196 +1,210 @@
 /* 1. 기본 초기화 */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box !important;
+    margin: 0;
+    padding: 0;
+    /* 너비 고정 */
+    box-sizing: border-box !important;
 }
 
 body {
-  font-family: 'Pretendard', sans-serif;
-  background-color: #f0f2f5;
-  min-width: 1200px;
+    font-family: 'Pretendard', sans-serif;
+    background-color: #f0f2f5;
+    /* 내부 요소 탈출 방지 */
+    overflow-x: hidden;
 }
 
 /* 2. 상단 헤더 스타일 */
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 70px;
-  background-color: #ffffff;
-  border-bottom: 1px solid #eee;
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #eee;
+    /* 항상 위에 보이도록 우선순위 지정 */
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
 }
 
-/* 헤더 안의 실제 메뉴가 담기는 컨테이너 */
 .nav-container {
-  width: 1200px;
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
+  /* 최대폭 제한 및 중앙 정렬 */
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
 }
 
-/* 로고 이미지 크기 설정 */
 .logo-area img { height: 45px; width: auto; }
 
-/* 메뉴 리스트 스타일 */
 .nav-menu {
-  display: flex;
-  gap: 40px;
-  list-style: none;
+    display: flex;
+    gap: 40px;
+    list-style: none;
 }
 
-/* 메뉴 글자 디자인 */
 .nav-menu a {
-  text-decoration: none;
-  color: #000;
-  font-weight: 700;
-  font-size: 1rem;
+    text-decoration: none;
+    color: #000;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: color 0.3s;
 }
+
+.nav-menu a:hover { color: #ffa53b; }
 
 /* 3. 메인 레이아웃 */
 .main-wrapper {
-  margin-top: 70px; 
-  padding: 40px 0;
-  display: flex;
-  justify-content: center; /* 중앙 */
+    margin-top: 70px; 
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
 }
 
-/* 메인 박스 */
 .container {
-  width: 1200px; 
-  display: flex;
-  justify-content: space-between; /* 좌우 끝 배치 */
-  padding: 0 20px;
-  gap: 30px; 
+    width: 100%;
+    max-width: 1200px; 
+    display: flex;
+    flex-wrap: wrap; /* 공간 부족 시 줄바꿈 */
+    justify-content: center;
 }
 
 /* 4. 왼쪽 갤러리 */
 .gallery {
-  width: 770px; /* 너비 최적화 */
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4열 유지 */
-  gap: 15px; 
-  align-content: start;
+    width: 790px;        
+    flex: 0 0 790px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
 }
 
-/*갤러리 스타일*/
-.gallery a {
-  text-decoration: none;
-  background: white;
-  padding: 10px;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: transform 0.25s;
+.gallery-item a {
+    text-decoration: none;
+    background: white;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.25s ease;
 }
 
-.gallery a:hover { transform: translateY(-5px); }
+.gallery-item a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
 
-/*갤러리 이미지*/
 .gallery img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 10px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
-/*갤러리 글씨*/
 .gallery h2 {
-  font-size: 0.85rem;
-  margin-top: 10px;
-  text-align: center;
-  color: #333;
-  height: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    font-size: 0.85rem;
+    margin-top: 10px;
+    text-align: center;
+    color: #333;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.2;
 }
 
 /* 5. 오른쪽 리뷰 패널 */
 .review-panel {
-  width: 350px; 
-  flex-shrink: 0; /* 너비 보존 */
+    flex: 1 1 30% ;       
+    min-width: 320px;    
+    max-width: 450px;    
+    display: flex;
+    align-self: stretch;
 }
 
-/* 리뷰를 담는 흰색 박스 디자인 */
 .main-img {
-  position: sticky;
-  top: 100px;
-  width: 100%;
-  height: 485px;
-  background: white;
-  border-radius: 25px;
-  padding: 30px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
+    position: sticky;
+    top: 100px;
+    width: 100%;
+    height: calc(100% - 20px); 
+    max-height: 85vh;         
+    
+    background: white;
+    border-radius: 25px;
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    overflow-y: auto;    
+}  
+
+/* 6. 반응형 설정  */
+@media (max-width: 1000px) {
+    .container {
+        flex-direction: column; 
+    }
+
+    .gallery {
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .review-panel {
+        width: 100%;
+        max-width: none; 
+        scroll-margin-top: 80px;
+    }
+
+    .main-img {
+        position: static; 
+        height: auto;
+        min-height: 350px;
+        margin-top: 10px;
+    }
 }
 
-/* 개별 리뷰 내용 제어 */
+@media (max-width: 600px) {
+    .gallery {
+        grid-template-columns: repeat(1, 1fr); 
+    }
+}
+
+/* 7. 리뷰 콘텐츠 내부 스타일 */
 .review-content {
-  display: none;
-  width: 100%;
-  animation: fadeIn 0.4s;
+    display: none;
+    width: 100%;
+    animation: fadeIn 0.4s;
+    scroll-margin-top: 150px;
 }
 
-/* 클릭 리뷰만 표시 */
 .review-content:target { display: block; }
-
-/* 리뷰가 나타나면 기본 안내 문구 숨김 */
 .main-img:has(.review-content:target) .default-msg { display: none; }
+.default-msg { display: block;}
 
-/* 리뷰 제목 스타일 */
-.review-content h2 { font-size: 1.5rem; margin-bottom: 10px; }
-
-/* 가격대/별점 태그 스타일 */
 .price-tag {
-  display: inline-block;
-  background: #e1f0fa;
-  color: #3498db;
-  padding: 5px 15px;
-  border-radius: 20px;
-  font-weight: bold;
-  margin-bottom: 20px;
+    display: inline-block;
+    background: #ffa53b;
+    color: black;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 100px;
 }
 
-/* 리뷰 본문 텍스트 스타일 */
-.review-content p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #555;
-  margin: 8px 0;
-  word-break: keep-all;
-}
-/* 리뷰 애니메이션 효과  */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== 6. Footer (최대 넓이 유지) ===== */
-#footer {
-  border-top: 1px solid #e5e5e5;
-  padding: 28px 20px;
-  background: #f7f7f7;
-  width: 100%;
-}
-
-#footerInfo {
-  max-width: 1200px; /* 전체 컨셉에 맞춰 1200px 안으로 배치 */
-  margin: 0 auto;
-  text-align: center;
-}
-
+/* ===================== 풋터 ===================== */
 /* ===== footer 전체 영역(바깥 컨테이너) ===== */
 #footer{
     
