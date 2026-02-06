@@ -84,6 +84,11 @@ header {
     padding: 10px 20px;
 }
 
+
+
+
+
+
 /* 히어로 */
 #hero_box{
     width: 100%;
@@ -132,6 +137,11 @@ header {
   font-size: 22px;
   font-weight: 700;
 }
+
+
+
+
+
 
 /* 베스트 샷 */
 .sectionTitle{
@@ -184,8 +194,9 @@ header {
 
 
 
+
+
 /* 이미지 박스 */
-/* 이미지 박스(회색 영역) */
 #imgs_box{
   min-height: 100px;
   background-color: lightgray;
@@ -193,13 +204,12 @@ header {
   border-radius: 10px;
 }
 
-/* 실제 3×3 배치가 일어나는 그리드 컨테이너 */
 /* 실제 배치가 일어나는 컨테이너 */
 .imgFlex {
   display: flex;        /* Flexbox 레이아웃 적용 */
   flex-wrap: wrap;      /* 핵심: 아이템이 넘치면 다음 줄로 넘어가게 설정 */
   gap: 12px;            /* 아이템 사이 간격 */
-  justify-content: center; /* 가운데 정렬 */
+  justify-content: space-between; /* 가운데 정렬 */
   margin-top: 12px;
   /* 부모의 너비를 624px로 제한하여 4번째 아이템은 다음 줄로 강제 이동 */
   max-width: 624px;
@@ -242,11 +252,11 @@ header {
   /* footer 위아래 여백(깔끔함의 핵심) */
   padding: 28px 20px;
 
-  /* 배경은 아주 연하게 (원하면 white로 바꿔도 됨) */
+  /* 배경은 아주 연하게  */
   background: #f7f7f7;
 }
 
-/* ===== footer 안쪽 "정보 블록"(내용 덩어리) ===== */
+/* ===== footer 컨테이너 ===== */
 #footerInfo{
   /* '적당한 폭': 내용이 너무 퍼지지 않게 최대 폭 제한 */
   max-width: 600px;
